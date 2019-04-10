@@ -2,11 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="https://beta.altizure.cn/sdk"></script>
     <title>Document</title>
 </head>
 <body>
-    <div>hello world</div>
+    <div id="page-content"></div>
 </body>
+<script>
+    // 创建一个参数配置对象
+let options = {
+  altizureApi:{
+    // 填入您的 app key
+    key: 'Y1yLgM4jx2C7p9KfEGpaSEJ0tMiUWJftBWhoH8W'
+  }
+}
+
+// 创建地球渲染引擎对象，附着在 page-content 这个 div 上
+let sandbox = new altizure.Sandbox('page-content', options)
+</script>
 </html>
