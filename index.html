@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,10 +15,25 @@ let options = {
   altizureApi:{
     // 填入您的 app key
     key: 'Y1yLgM4jx2C7p9KfEGpaSEJ0tMiUWJftBWhoH8W'
-  }
+  },
+  renderItems: {
+    planet: function(level, column, row) {            
+            return 'https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/' + level + '/' + row + '/' + column
+          },         
+          featureInView: false, // altizure featured projects
+          orbitRing: false // orbit ring
+    },
+    camera: {
+          flyTo: { alt:1020.0739295752213,
+            lat:48.085545,
+            lng:11.19618,
+            north:-27.271585092584015,
+            tilt:74.7023627906978 }
+    },
 }
 
 // 创建地球渲染引擎对象，附着在 page-content 这个 div 上
 let sandbox = new altizure.Sandbox('page-content', options)
+sandbox.add('AltizureProjectMarker', {pid: '5ca2b3f0e5cfee35d634cfe1'})
 </script>
 </html>
